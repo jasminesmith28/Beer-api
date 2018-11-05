@@ -36,6 +36,7 @@ header{
     li{
       @include font($header-color, 16px, $font-type);
       margin: 10px;
+      letter-spacing: 1px;
     }
   }
 }
@@ -48,28 +49,23 @@ main{
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 1.5%;
   
-  section{
-    @extend %ph;
+    section{
+      @extend %ph;
 
-    .ph-color{
-      @extend %ph-color;
-
-      p{
-        @include font($header-color, 20px, $second-font);
+      ul{
+      @include font($main-color, 15px, $second-font);
+        span{
+          font-weight: bold;
+        } 
       }
-    }
+      .ph-color{
+        @extend %ph-color;
 
-    div{
-      margin: 0 30px;
-    
-
-      p{
-        @include font($main-color, 20px, $second-font);
-        margin: 10px 0;
+        li{
+          @include font($header-color, 15px, $second-font);
       }
     }
   }
-
 
   .beer-item {
     @extend %beer-background;
@@ -133,14 +129,16 @@ aside{
       section{
         @extend %ph;
 
-        p{
+        ul{
         @include font($main-color, 15px, $second-font);
+          span{
+            font-weight: bold;
+          } 
         }
-
         .ph-color{
           @extend %ph-color;
   
-          p{
+          li{
             @include font($header-color, 15px, $second-font);
         }
       }
@@ -161,7 +159,7 @@ aside{
     .form-pick-a-beer{
         height: 70px;
   }
-    #text-pick{
+    .text-pick{
       grid-column: 1;
       grid-row : 1;
       color : #0C6CD4;
