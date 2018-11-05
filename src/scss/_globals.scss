@@ -29,7 +29,6 @@ header{
   }
 }
 
-
 main { 
     margin: 1rem auto;
     max-width: 95%;
@@ -46,5 +45,26 @@ main {
     justify-content: center;
     align-items: center;
   }
-  
-  
+
+footer{
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+
+  .pagination {
+    display: inline-block;
+
+    a {
+      @include font($main-color, 16px, $font-type);
+      font-weight: 400;
+      float: left;
+      padding: 8px 16px;
+      text-decoration: none;
+     }
+
+     a:hover:not(.active) {
+       background-color:#047CBB;
+       color:white;
+      }
+  }
+}
