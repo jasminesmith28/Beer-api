@@ -1,0 +1,10 @@
+$header-color: #ffffff;
+$font-type: 'Open Sans'; 
+$main-color: #c2c2c2;
+
+
+@mixin font($color, $size, $font-family){
+    color: $color;
+    font-size: $size;
+    font-family: $font-type;
+}
