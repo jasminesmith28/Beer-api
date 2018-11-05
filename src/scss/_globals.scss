@@ -36,12 +36,11 @@ header{
     li{
       @include font($header-color, 16px, $font-type);
       margin: 10px;
-      font-weight: 600;
     }
   }
 }
 
-main { 
+main{ 
     margin: 1rem auto;
     max-width: 95%;
     display: grid;
@@ -50,13 +49,10 @@ main {
     grid-gap: 1.5%;
   
   section{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 3rem;
+    @extend %ph;
 
     .ph-color{
-      background-color: rgb(248, 183, 4);
-      padding: 2px 10px;
+      @extend %ph-color;
 
       p{
         @include font($header-color, 20px, $second-font);
@@ -76,11 +72,9 @@ main {
 
 
   .beer-item {
-    background-color:#f2f2f2;
+    @extend %beer-background;
     height: 45vw;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
     padding:  0 20px;
@@ -90,6 +84,151 @@ main {
       height: 200px;
       margin-bottom: 20px;
     }
+  }
+}
+
+aside{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5%;
+
+  button{
+    background-color: rgb(248, 183, 4);
+      border: none;
+      margin: auto;
+      width: 250px;
+      padding: 2% 4%;
+      @include font($header-color, 12px, $second-font);
+
+  }
+  .one-beer{
+    @extend %beer-background;
+    height: 35vw;
+    margin: 5% 1%;
+    align-items: center;
+
+    img{
+      width: 70px;
+      height: 250px;
+  }
+  
+    .description{
+      width: 35%;
+      padding-left: 5%;
+      text-align: center;
+
+      h2{
+      @include font(#0C6CD4, 16px, $second-font);
+         margin: 2%;
+    }
+
+      button{
+        background-color: rgb(13, 98, 189);
+        border: none;
+        padding: 3% 8%;
+        margin-top: 5%;
+        @include font($header-color, 12px, $second-font);
+    }
+
+      section{
+        @extend %ph;
+
+        p{
+        @include font($main-color, 15px, $second-font);
+        }
+
+        .ph-color{
+          @extend %ph-color;
+  
+          p{
+            @include font($header-color, 15px, $second-font);
+        }
+      }
+    }
+  }
+  }
+}
+
+  .pick-a-beer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    background-color: #F2F2F2;
+    width : 55%;
+    margin : auto;
+    @include font($main-color, 15px, $second-font);
+    overflow: hidden;
+    .form-pick-a-beer{
+        height: 70px;
+  }
+    #text-pick{
+      grid-column: 1;
+      grid-row : 1;
+      color : #0C6CD4;
+      display: flex;
+      justify-content: center;
+      margin-top: 35px;
+      margin-bottom: 30px;
+  }
+    .name-pick{
+      grid-column-start: 1;
+      grid-column-end : 3;
+      grid-row : 2;
+      justify-self: start;
+      margin-left: 35px;
+      input{
+        @extend %imput-one;
+      }
+  }
+    .hops-pick{
+      grid-column-start: 2;
+      grid-column-end : 4;
+      grid-row : 2;
+      margin-left: 110px;
+      justify-self: center;
+      input{
+        @extend %imput-one;
+      }
+  }
+    .abv-pick{
+      grid-column-start: 1;
+      grid-column-end : 2;
+      grid-row : 3;
+      justify-self: center;
+      input{
+        @extend %imput-two;
+      }
+  }
+    .ibu-pick{
+      grid-column-start: 2;
+      grid-column-end : 3;
+      grid-row : 3;
+      justify-self: center;
+      input{
+        @extend %imput-two;
+      }
+  }
+    .ebc-pick{
+      grid-column-start: 3;
+      grid-column-end : 4;
+      grid-row : 3;
+      justify-self: center;
+      input{
+        @extend %imput-two;
+      }
+  }
+    .button-pick-a-beer{
+      grid-column-start: 3;
+      grid-column-end : 4;
+      grid-row : 4;
+      justify-self: center;
+
+    button{
+      background-color: #047CBB;
+       padding: 10px 13px;
+       width: 100%;
+       @include font($header-color, 10px, $second-font);
+      }
   }
 }
 
