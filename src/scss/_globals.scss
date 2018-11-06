@@ -83,7 +83,7 @@ main{
   }
 }
 
-aside{
+.randomBeer{
   display: flex;
   flex-direction: column;
   margin-bottom: 5%;
@@ -104,7 +104,7 @@ aside{
     align-items: center;
 
     img{
-      width: 70px;
+      width: 100px;
       height: 250px;
   }
   
