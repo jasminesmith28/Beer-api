@@ -103,10 +103,10 @@ $('body').on('click', '#newBeer', function () {
         var flavour = [];
         data.forEach(function (element) {
             randomBeer.push(new _getData2.default(element.image_url, element.name, element.description, element.abv, element.ibu, element.ph, element.tagline));
-            $('.randomBeer').append('<div class="one-beer"><div><img src="' + element.image_url + '" ></div><div class="description"><h1>' + element.name + '</h1><h2>' + element.tagline + '</h2><p>' + element.description + '</p><section><ul><li>ABV</li><li><span>' + element.abv + '</span></li></ul><ul><li>IBU</li><li><span>' + element.ibu + '</span></li></ul><ul class="ph-color"><li>PH</li><li><span>' + element.ph + '</span></li></ul></section><button id="i">INGREDIENTS</button></div></div><button id="newBeer" >GIVE ME ANOTHER BEER</button>');
+            $('.randomBeer').append('<div class="one-beer"><div><img src="' + element.image_url + '" ></div><div class="description"><h1>' + element.name + '</h1><h2>' + element.tagline + '</h2><p>' + element.description + '</p><section><ul><li>ABV</li><li><span>' + element.abv + '</span></li></ul><ul><li>IBU</li><li><span>' + element.ibu + '</span></li></ul><ul class="ph-color"><li>PH</li><li><span>' + element.ph + '</span></li></ul></section><button class="ingredients">INGREDIENTS</button></div></div><button id="newBeer" >GIVE ME ANOTHER BEER</button>');
             flavour.push(new _ingredients2.default(element.ingredients.malt[0].name, element.ingredients.hops[0].name, element.ingredients.yeast));
             $('.modal').empty();
-            $('.modal').append('<div><h1>INGREDIENTS</h1><i id="close" class="fa fa-close"></i></div><ul><li><span>Malt:</span></li><li>' + element.ingredients.malt[0].name + '</li></ul><ul><li><span>Hops:</span></li><li>' + element.ingredients.hops[0].name + '</li></ul><ul><li><span>Yeast:</span></li><li>' + element.ingredients.yeast + '</li></ul>');
+            $('.modal').append('<div><h1>INGREDIENTS</h1><p class="close">x</p></div><ul><li><span>Malt:</span></li><li>' + element.ingredients.malt[0].name + '</li></ul><ul><li><span>Hops:</span></li><li>' + element.ingredients.hops[0].name + '</li></ul><ul><li><span>Yeast:</span></li><li>' + element.ingredients.yeast + '</li></ul>');
         });
 
         console.log(randomBeer);
@@ -122,10 +122,10 @@ $.ajax({
     var flavour = [];
     data.forEach(function (element) {
         randomBeer.push(new _getData2.default(element.image_url, element.name, element.description, element.abv, element.ibu, element.ph, element.tagline));
-        $('.randomBeer').append('<div class="one-beer"><div><img src="' + element.image_url + '" ></div><div class="description"><h1>' + element.name + '</h1><h2>' + element.tagline + '</h2><p>' + element.description + '</p><section><ul><li>ABV</li><li><span>' + element.abv + '</span></li></ul><ul><li>IBU</li><li><span>' + element.ibu + '</span></li></ul><ul class="ph-color"><li>PH</li><li><span>' + element.ph + '</span></li></ul></section><button id="i" >INGREDIENTS</button></div></div><button id="newBeer" >GIVE ME ANOTHER BEER</button>');
+        $('.randomBeer').append('<div class="one-beer"><div><img src="' + element.image_url + '" ></div><div class="description"><h1>' + element.name + '</h1><h2>' + element.tagline + '</h2><p>' + element.description + '</p><section><ul><li>ABV</li><li><span>' + element.abv + '</span></li></ul><ul><li>IBU</li><li><span>' + element.ibu + '</span></li></ul><ul class="ph-color"><li>PH</li><li><span>' + element.ph + '</span></li></ul></section><button class="ingredients" >INGREDIENTS</button></div></div><button id="newBeer" >GIVE ME ANOTHER BEER</button>');
         flavour.push(new _ingredients2.default(element.ingredients.malt[0].name, element.ingredients.hops[0].name, element.ingredients.yeast));
         $('.modal').empty();
-        $('.modal').append('<div><h1>INGREDIENTS</h1><i id="close" class="fa fa-close"></i></div><ul><li><span>Malt:</span></li><li>' + element.ingredients.malt[0].name + '</li></ul><ul><li><span>Hops:</span></li><li>' + element.ingredients.hops[0].name + '</li></ul><ul><li><span>Yeast:</span></li><li>' + element.ingredients.yeast + '</li></ul>');
+        $('.modal').append('<div><h1>INGREDIENTS</h1><p class="close">x</p></div><ul><li><span>Malt:</span></li><li>' + element.ingredients.malt[0].name + '</li></ul><ul><li><span>Hops:</span></li><li>' + element.ingredients.hops[0].name + '</li></ul><ul><li><span>Yeast:</span></li><li>' + element.ingredients.yeast + '</li></ul>');
     });
 
     console.log(randomBeer);
@@ -156,12 +156,12 @@ $('#pickABeer').on('click', function () {
     $('footer').css('display', 'none');
 });
 
-$('body').on('click', '#i', function () {
+$('body').on('click', '.ingredients', function () {
     $('.modal').css('display', 'grid');
     $('.cover').css('display', 'grid');
 });
 
-$('body').on('click', '#close', function () {
+$('body').on('click', '.close', function () {
     $('.modal').css('display', 'none');
     $('.cover').css('display', 'none');
 });
