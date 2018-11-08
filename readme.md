@@ -27,3 +27,7 @@ HTML, Sass, Gulp, Javascript, jQuery.
 ## Pick a Beer
 
 <img src="./images/pickABeer.png">
+
+## Link
+
+https://jasminesmith28.github.io/Beer-api/
