@@ -1,25 +1,14 @@
 
-class getData{
-    constructor (image, heading, description, abv, ibu, ph, tagline){
-        this.image = image;
-        this.heading = heading;
-        this.description = description;
-        this.abv = abv;
-        this.ibu = ibu;
-        this.ph = ph;
-        this.tagline = tagline;
-        }
-    };
+import getData from "./getData.js";
 
-    
 class ingredients{
-     constructor (malt, hops, yeast){
-        this.malt = malt;
-        this.hops = hops;
-        this.yeast = yeast;
-        }
-    };
-
+    constructor (malt, hops, yeast){
+       this.malt = malt;
+       this.hops = hops;
+       this.yeast = yeast;
+       }
+   };
+    
     
 $.ajax({
         url: "https://api.punkapi.com/v2/beers?page=1&per_page=6",
@@ -33,6 +22,7 @@ $.ajax({
         $('.randomBeer').css('display', 'none')
         $('.pick-a-beer').css('display', 'none')
         $('.modal').css('display', 'none')
+        $('.cover').css('display', 'none');
         })
         
     $('body').on('click', '.page-number', function(){
@@ -95,7 +85,11 @@ $('body').on('click', '#newBeer', function() {
             +element.abv+'</span></li></ul><ul><li>IBU</li><li><span>'
             +element.ibu+'</span></li></ul><ul class="ph-color"><li>PH</li><li><span>'
             +element.ph+'</span></li></ul></section><button id="i">INGREDIENTS</button></div></div><button id="newBeer" >GIVE ME ANOTHER BEER</button>');
-            flavour.push(new ingredients(element.ingredients.malt, element.ingredients.hops, element.ingredients.yeast));
+            flavour.push(new ingredients(element.ingredients.malt[0].name, element.ingredients.hops[0].name, element.ingredients.yeast));
+            $('.modal').append('<div><h1>INGREDIENTS</h1><i id="close" class="fa fa-close"></i></div><ul><li><span>Malt:</span></li><li>'
+            +element.ingredients.malt[0].name+'</li></ul><ul><li><span>Hops:</span></li><li>'
+            +element.ingredients.hops[0].name+'</li></ul><ul><li><span>Yeast:</span></li><li>'
+            +element.ingredients.yeast+'</li></ul>');
         });
     
        console.log(randomBeer);
@@ -113,7 +107,11 @@ $('body').on('click', '#newBeer', function() {
         data.forEach(element => {
             randomBeer.push(new getData(element.image_url, element.name, element.description, element.abv, element.ibu, element.ph, element.tagline));
             $('.randomBeer').append('<div class="one-beer"><div><img src="'+element.image_url+'" ></div><div class="description"><h1>'+element.name+'</h1><h2>'+element.tagline+'</h2><p>'+element.description+'</p><section><ul><li>ABV</li><li><span>'+element.abv+'</span></li></ul><ul><li>IBU</li><li><span>'+element.ibu+'</span></li></ul><ul class="ph-color"><li>PH</li><li><span>'+element.ph+'</span></li></ul></section><button id="i" >INGREDIENTS</button></div></div><button id="newBeer" >GIVE ME ANOTHER BEER</button>');
-            flavour.push(new ingredients(element.ingredients.malt, element.ingredients.hops, element.ingredients.yeast));
+            flavour.push(new ingredients(element.ingredients.malt[0].name, element.ingredients.hops[0].name, element.ingredients.yeast));
+            $('.modal').append('<div><h1>INGREDIENTS</h1><i id="close" class="fa fa-close"></i></div><ul><li><span>Malt:</span></li><li>'
+            +element.ingredients.malt[0].name+'</li></ul><ul><li><span>Hops:</span></li><li>'
+            +element.ingredients.hops[0].name+'</li></ul><ul><li><span>Yeast:</span></li><li>'
+            +element.ingredients.yeast+'</li></ul>');
         });
     
        console.log(randomBeer);
@@ -125,6 +123,7 @@ $('#beerButton').on('click', function() {
     $('main').css('visibility', 'visible').css('display', 'grid');
     $('.randomBeer').css('display', 'none');
     $('.pick-a-beer').css('display', 'none');
+    $('footer').css('display', 'grid');
     $('.modal').css('display', 'none');
    });
 
@@ -146,10 +145,11 @@ $('#pickABeer').on('click', function() {
 
 
    $('body').on('click', '#i', function(){
-        $('.modal').css('visibility', 'visible').css('display', 'grid');
-       $('.randomBeer').addClass
+        $('.modal').css('display', 'grid');
+        $('.cover').css('display', 'grid');
    });
       
    $('body').on('click', '#close', function(){
     $('.modal').css('display', 'none');
+    $('.cover').css('display', 'none');
 });

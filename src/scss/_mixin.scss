@@ -3,3 +3,11 @@
     font-size: $size;
     font-family: $font-type;
 }
+
+@function set-contrast-color($color) {
+    @if (lightness($color) > 50) {
+      @return #000; // Lighter background, return dark color
+    } @else {
+      @return #fff; // Darker background, return light color
+    }
+  }
