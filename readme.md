@@ -18,8 +18,12 @@ HTML, Sass, Gulp, Javascript, jQuery.
 
 <img src="./images/mainPage.png">
 
-<img src="./images/pickABeer.png">
+## Random Beer
 
 <img src="./images/randomBeer.png">
 
 <img src="./images/Ingredients.png">
+
+## Pick a Beer
+
+<img src="./images/pickABeer.png">
