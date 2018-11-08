@@ -16,3 +16,10 @@ HTML, Sass, Gulp, Javascript, jQuery.
 
 ## Screenshots
 
+<img src="./images/mainPage.png">
+
+<img src="./images/pickABeer.png">
+
+<img src="./images/randomBeer.png">
+
+<img src="./images/Ingredients.png">
