@@ -28,6 +28,3 @@ HTML, Sass, Gulp, Javascript, jQuery.
 
 <img src="./images/pickABeer.png">
 
-## Link
-
-https://jasminesmith28.github.io/Beer-api/
